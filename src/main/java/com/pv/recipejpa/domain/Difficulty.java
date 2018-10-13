@@ -1,4 +1,4 @@
-package com.pv.recipejpa;
+package com.pv.recipejpa.domain;
 
 public enum Difficulty {
     EASY,

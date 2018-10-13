@@ -1,7 +1,6 @@
 package com.pv.recipejpa.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +10,13 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class UnitOfMesure {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String value;
+    @NonNull
+    private String description;
 }

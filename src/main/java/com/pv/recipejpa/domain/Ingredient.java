@@ -1,8 +1,6 @@
 package com.pv.recipejpa.domain;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -11,19 +9,20 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Data
-public class Ingridient {
+@RequiredArgsConstructor
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NonNull
     private String description;
-
+    @NonNull
     private BigDecimal amount;
 
     @ManyToOne
     @JoinColumn
     private Recipe recipe;
-
+    @NonNull
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMesure unitOfMesure;
 }
